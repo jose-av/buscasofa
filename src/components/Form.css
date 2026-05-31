@@ -1,6 +1,7 @@
 @import '../styles/variables.css';
 
-.register-form {
+.register-form,
+.login-form {
   background: var(--surface);
   color: var(--text);
   padding: 2rem;
@@ -12,12 +13,14 @@
   flex-direction: column;
 }
 
-.register-form h2 {
+.register-form h2,
+.login-form h2 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.register-form input {
+.register-form input,
+.login-form input {
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1.2rem;
@@ -28,7 +31,8 @@
   box-sizing: border-box;
 }
 
-.register-form button {
+.register-form button,
+.login-form button {
   background: var(--primary);
   color: var(--white);
   border: none;
@@ -39,7 +43,8 @@
   transition: background 0.2s ease;
 }
 
-.register-form button:hover {
+.register-form button:hover,
+.login-form button:hover {
   background: var(--accent);
   color: var(--white);
 }
