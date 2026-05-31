@@ -1,14 +1,15 @@
-import Reasc from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './NotFound.css';
 
 export default function NotFound(){
     return (
-        <div style={{ textAlign: 'center', padding: '50px' }}>
-            <h1>404</h1>
-            <h2>Página no encontrada</h2>
-            <p>No hemos encontrado la página que buscas</p>
+        <div className="not-found-container">
+            <h1 className="not-found-title">404</h1>
+            <h2 className="not-found-subtitle">Página no encontrada</h2>
+            <p className="not-found-text">No hemos encontrado la página que buscas</p>
 
-            <Link to="/" style={{ color:'blue', textDecoration: 'undrline' }}>
+            <Link to="/" className="not-found-link">
                 Volver al inicio
             </Link>
         </div>
