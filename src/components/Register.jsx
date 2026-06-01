@@ -5,6 +5,7 @@ import './Form.css';
 function Register() {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
   const [msg, setMsg] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
   
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ function Register() {
   const handleSubmit = async e => {
     e.preventDefault();
     setMsg('');
+    setIsSuccess(false);
 
     try {
       const res = await fetch('http://localhost:4000/api/register', {
@@ -24,7 +26,13 @@ function Register() {
       const data = await res.json();
 
       if (res.ok) {
-        navigate('/login'); 
+        setMsg(data.message || 'Usuario registrado correctamente');
+        setIsSuccess(true);
+        
+        setTimeout(() => {
+          navigate('/login'); 
+        }, 1500);
+
       } else {
         setMsg(data.message || 'Error al registrar el usuario');
       }
@@ -41,7 +49,12 @@ function Register() {
       <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
       <input name="password" type="password" placeholder="Contraseña" onChange={handleChange} required />
       <button type="submit">Registrarse</button>
-      {msg && <p className="form-message">{msg}</p>} {/* Le añadimos una clase para el CSS */}
+      
+      {msg && (
+        <p className={`form-message ${isSuccess ? 'success-msg' : 'error-msg'}`}>
+          {msg}
+        </p>
+      )}
     </form>
   );
 }

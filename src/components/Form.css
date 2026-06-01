@@ -55,3 +55,11 @@
   font-weight: 500;
   color: var(--accent);
 }
+
+.form-message.success-msg {
+  color: #2ecc71; 
+}
+
+.form-message.error-msg {
+  color: var(--accent);
+}
