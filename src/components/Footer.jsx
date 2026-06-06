@@ -18,7 +18,7 @@ function Footer() {
         <div className="footer-section team-info">
           <h4>Equipo de Desarrollo</h4>
           <ul className="team-list">
-            <li>👤 Carol Nahir Torres</li>
+            <li>👤 Nahir Carolina Torres</li>
             <li>👤 Jose Antonio Verrire Maza</li>
             <li>👤 Victor Hugo Ponce</li>
           </ul>
