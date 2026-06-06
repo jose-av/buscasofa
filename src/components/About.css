@@ -1,9 +1,91 @@
 @import '../styles/variables.css';
 
 .about-container {
-  background: var(--surface);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: 80vh;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.titulo {
+  text-align: center;
+}
+
+.about-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: var(--text);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(37, 69, 71, 0.12);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Cuadrícula adaptable para las tarjetas */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+/* Estilo de cada tarjeta individual */
+.member-card {
+  background-color: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.member-name {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin: 0 0 0.25rem 0;
+}
+
+.member-role {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.member-description {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
 }
